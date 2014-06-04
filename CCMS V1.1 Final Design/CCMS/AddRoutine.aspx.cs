@@ -14,7 +14,7 @@ namespace CCMS
     public partial class AddRoutine : System.Web.UI.Page
     {
         string connectionString;
-        private DataService objDataService;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             
