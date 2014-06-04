@@ -85,6 +85,14 @@ namespace CCMS
                     lnkAttendanceReport.Text = "Report";
                     lnkAttendanceReport.PostBackUrl = "~/AttendanceReport.aspx";
 
+                    lnkAddStudent.Visible = true;
+                    lnkAddStudent.Text = "Add Students";
+                    lnkAddStudent.PostBackUrl = "~/Students.aspx";
+
+                    lnkEditStudent.Visible = true;
+                    lnkEditStudent.Text = "Edit Students";
+                    lnkEditStudent.PostBackUrl = "~/EditStudents.aspx";
+
                 }
             }
             else if (Session["Role"] != null  && String.Compare(Session["Role"].ToString() ,"Faculty",true)==0)

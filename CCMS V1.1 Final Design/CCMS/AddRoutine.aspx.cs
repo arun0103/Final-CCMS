@@ -16,7 +16,9 @@ namespace CCMS
         string connectionString;
         private DataService objDataService;
         protected void Page_Load(object sender, EventArgs e)
-        {            
+        {
+            
+
             if (!Page.IsPostBack)
             {
                 //ContentPlaceHolder mcon = new ContentPlaceHolder();
@@ -239,47 +241,51 @@ namespace CCMS
             RFV_subjectlist_drp.Enabled = true;
             RFV_YearList.Enabled = true;
             Page.Validate();
-          
 
-            if (ClassList.SelectedIndex != 0 && FacultyList.SelectedIndex != 0 && Semester_drp.SelectedIndex != 0 && subjectlist_drp.SelectedIndex != 0 && YearList.SelectedIndex != 0)
+            if (Page.IsValid)
             {
 
-                Routine routine = new Routine
-                {
-                    Fid = Convert.ToInt16(FacultyList.SelectedValue),
-                    ClassId = Convert.ToInt16(ClassList.SelectedValue),
-                    EnrollYear = YearList.SelectedItem.Text,
-                    Semester = Semester_drp.SelectedItem.Text,
-                    SubjectID = subjectlist_drp.SelectedItem.Value,
-                    SectionName = section_drp.SelectedItem.Text
-                };
 
-                int added = CCMSBusinessLayer.AddRoutine(routine);
-
-                if (added > 0)
+                if (ClassList.SelectedIndex != 0 && FacultyList.SelectedIndex != 0 && Semester_drp.SelectedIndex != 0 && subjectlist_drp.SelectedIndex != 0 && YearList.SelectedIndex != 0)
                 {
-                    ScriptManager.RegisterStartupScript(this, GetType(), "Success !! ", "alert('Routine details has been added.');", true);
+
+                    Routine routine = new Routine
+                    {
+                        Fid = Convert.ToInt16(FacultyList.SelectedValue),
+                        ClassId = Convert.ToInt16(ClassList.SelectedValue),
+                        EnrollYear = YearList.SelectedItem.Text,
+                        Semester = Semester_drp.SelectedItem.Text,
+                        SubjectID = subjectlist_drp.SelectedItem.Value,
+                        SectionName = section_drp.SelectedItem.Text
+                    };
+
+                    int added = CCMSBusinessLayer.AddRoutine(routine);
+
+                    if (added > 0)
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Success !! ", "alert('Routine details has been added.');", true);
+                    }
+
+                    connectionString = ConfigurationManager.ConnectionStrings["dbConnection"].ConnectionString;
+                    string sqlQuery = "Select routine.routineId, Users.FirstName + ' ' +Users.LastName as FacultyName, class.ClassName, routine.SectionName, Syllabus.Subject_Name from routine " +
+                                       "inner join Users on routine.Fid = Users.UserID " +
+                                       "join class on routine.ClassId = class.ClassId " +
+                                       "join Syllabus on routine.SubjectId=Syllabus.Subject_Code order by Subject_Name;";
+                    using (SqlConnection con = new SqlConnection(connectionString))
+                    {
+
+                        SqlCommand cmd = new SqlCommand(sqlQuery, con);
+                        con.Open();
+                        SqlDataReader rdr = cmd.ExecuteReader();
+
+                        RoutineGridView.DataSource = rdr;
+                        RoutineGridView.DataBind();
+                    }
+
+
                 }
-
-                connectionString = ConfigurationManager.ConnectionStrings["dbConnection"].ConnectionString;
-                string sqlQuery = "Select routine.routineId, Users.FirstName + ' ' +Users.LastName as FacultyName, class.ClassName, routine.SectionName, Syllabus.Subject_Name from routine " +
-                                   "inner join Users on routine.Fid = Users.UserID " +
-                                   "join class on routine.ClassId = class.ClassId " +
-                                   "join Syllabus on routine.SubjectId=Syllabus.Subject_Code order by Subject_Name;";
-                using (SqlConnection con = new SqlConnection(connectionString))
-                {
-
-                    SqlCommand cmd = new SqlCommand(sqlQuery, con);
-                    con.Open();
-                    SqlDataReader rdr = cmd.ExecuteReader();
-
-                    RoutineGridView.DataSource = rdr;
-                    RoutineGridView.DataBind();
-                }
-                
-                
+                clear();
             }
-            clear();
         }
         public void clear()
         {

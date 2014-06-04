@@ -34,7 +34,7 @@
                 <div id="right-part-timesheet-info" style="float: left">
                     <div style="position: absolute; margin-left: 290px; margin-top: 35px;">
                     </div>
-                    <table cellspacing="10px;" style="font-size: 14px; padding-left: 19px;">
+                    <table cellspacing="10px;" style="font-size: 14px; padding-left: 59px;">
                         <tr>
                             <td class="auto-style2">Record Date
                             </td>
