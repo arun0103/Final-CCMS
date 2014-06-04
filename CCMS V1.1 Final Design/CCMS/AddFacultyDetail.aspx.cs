@@ -27,7 +27,7 @@ namespace CCMS
 
         public void BindEmailDropdown()
         {
-            string command = "Select UserID, UserEmail from Users order by UserEmail";
+            string command = "Select UserID, UserEmail from Users where role ='Faculty' order by UserEmail";
             DataTable EmailTable = new DataTable();
 
 
@@ -86,39 +86,42 @@ namespace CCMS
             NumberValidation.Enabled = true;
             Page.Validate();
 
-            if (firstName.Text != "" && lastName.Text != "" && EmailList.SelectedIndex != 0)
+            if (Page.IsValid)
             {
-
-                Faculty faculty = new Faculty
+                if (firstName.Text != "" && lastName.Text != "" && EmailList.SelectedIndex != 0)
                 {
-                    Active = activeCB.Checked,
-                    Contact = contact.Text,
-                   //Email = txtEmail.Text,
-                   Email = EmailList.SelectedItem.Text,
-                    LastName = lastName.Text,
-                    FirstName = firstName.Text,
-                    UserId = findUserID(EmailList.SelectedValue)
-                };
 
-                int added = CCMSBusinessLayer.AddFaculty(faculty);
+                    Faculty faculty = new Faculty
+                    {
+                        Active = activeCB.Checked,
+                        Contact = contact.Text,
+                        //Email = txtEmail.Text,
+                        Email = EmailList.SelectedItem.Text,
+                        LastName = lastName.Text,
+                        FirstName = firstName.Text,
+                        UserId = findUserID(EmailList.SelectedValue)
+                    };
 
-                if (added > 0)
-                {
-                    ScriptManager.RegisterStartupScript(this, GetType(), "Success", "alert('Faculty detail is successfully recorded.');", true);
-                    //string connectionString = ConfigurationManager.ConnectionStrings["dbConnection"].ConnectionString;
-                    //string sqlQuery = "select * from faculty";
-                    //using (SqlConnection con = new SqlConnection(connectionString))
-                    //{
-                    //    SqlCommand cmd = new SqlCommand(sqlQuery, con);
-                    //    con.Open();
-                    //    SqlDataReader rdr = cmd.ExecuteReader();
-                    //    FacultyGridView.DataSource = rdr;
-                    //    FacultyGridView.DataBind();
-                    //}
-                    //ContentPlaceHolder mcon = new ContentPlaceHolder();
-                    //mcon = (ContentPlaceHolder)Master.FindControl("pageContent2");
-                    //mcon.Visible = true;
-                    Reset();
+                    int added = CCMSBusinessLayer.AddFaculty(faculty);
+
+                    if (added > 0)
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Success", "alert('Faculty detail is successfully recorded.');", true);
+                        //string connectionString = ConfigurationManager.ConnectionStrings["dbConnection"].ConnectionString;
+                        //string sqlQuery = "select * from faculty";
+                        //using (SqlConnection con = new SqlConnection(connectionString))
+                        //{
+                        //    SqlCommand cmd = new SqlCommand(sqlQuery, con);
+                        //    con.Open();
+                        //    SqlDataReader rdr = cmd.ExecuteReader();
+                        //    FacultyGridView.DataSource = rdr;
+                        //    FacultyGridView.DataBind();
+                        //}
+                        //ContentPlaceHolder mcon = new ContentPlaceHolder();
+                        //mcon = (ContentPlaceHolder)Master.FindControl("pageContent2");
+                        //mcon.Visible = true;
+                        Reset();
+                    }
                 }
             }
         }

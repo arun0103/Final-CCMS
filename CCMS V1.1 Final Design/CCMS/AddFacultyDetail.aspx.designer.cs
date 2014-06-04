@@ -22,13 +22,13 @@ namespace CCMS {
         protected global::System.Web.UI.WebControls.DropDownList EmailList;
         
         /// <summary>
-        /// emailValidator control.
+        /// AFD_email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator emailValidator;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator AFD_email;
         
         /// <summary>
         /// firstName control.
@@ -40,6 +40,15 @@ namespace CCMS {
         protected global::System.Web.UI.WebControls.TextBox firstName;
         
         /// <summary>
+        /// AFD_firstname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator AFD_firstname;
+        
+        /// <summary>
         /// lastName control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace CCMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox lastName;
+        
+        /// <summary>
+        /// AFD_lastname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator AFD_lastname;
         
         /// <summary>
         /// contact control.
