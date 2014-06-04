@@ -129,10 +129,8 @@ namespace CCMS
             confirmedPassword.Enabled = false;
 
             OriginalPasswordValidator.Enabled = false;
-            newPasswordValidator.Enabled = false;
+        
             regExpressionValidator.Enabled = false;
-           
-            confirmPasswordValidator.Enabled = false;
 
             showPanel.Visible = true;
 

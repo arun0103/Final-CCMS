@@ -49,15 +49,6 @@ namespace CCMS {
         protected global::System.Web.UI.WebControls.TextBox newPassword;
         
         /// <summary>
-        /// newPasswordValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator newPasswordValidator;
-        
-        /// <summary>
         /// regExpressionValidator control.
         /// </summary>
         /// <remarks>
@@ -74,15 +65,6 @@ namespace CCMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox confirmedPassword;
-        
-        /// <summary>
-        /// confirmPasswordValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator confirmPasswordValidator;
         
         /// <summary>
         /// regExpressionValidator2 control.

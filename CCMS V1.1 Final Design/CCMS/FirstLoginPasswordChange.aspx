@@ -37,7 +37,7 @@
                             </td>
                             <td>
                                 <asp:TextBox ID="originalPassword" runat="server" TextMode="Password"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="OriginalPasswordValidator" runat="server" ErrorMessage="Please enter your original password." ControlToValidate="originalPassword"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="OriginalPasswordValidator" runat="server" ForeColor="Red" ErrorMessage="Please enter your original password." ControlToValidate="originalPassword"></asp:RequiredFieldValidator>
                             </td>
 
                         </tr>
@@ -48,8 +48,8 @@
                             </td>
                             <td>
                                 <asp:TextBox ID="newPassword" runat="server" TextMode="Password" ></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="newPasswordValidator" runat="server" ErrorMessage="Please enter your new password." ControlToValidate="newPassword"></asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="regExpressionValidator" runat="server" ControlToValidate="newPassword" ValidationExpression="^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" Display="Dynamic" ErrorMessage="Please follow above password guideline. "/>
+                                
+                                <asp:RegularExpressionValidator ID="regExpressionValidator" runat="server"  ForeColor="Red" ControlToValidate="newPassword" ValidationExpression="^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" Display="Dynamic" ErrorMessage="Please follow above password guideline. "/>
 
                             </td>
 
@@ -61,8 +61,8 @@
                             </td>
                             <td>
                                 <asp:TextBox ID="confirmedPassword" runat="server" TextMode="Password" ></asp:TextBox>    
-                                <asp:RequiredFieldValidator ID="confirmPasswordValidator" runat="server" ErrorMessage="Reenter your new password." ControlToValidate="confirmedPassword" ></asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="regExpressionValidator2" runat="server" ControlToValidate="confirmedPassword" ValidationExpression="^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" Display="Dynamic" ErrorMessage="Please follow above password guideline. "/>
+                                
+                                <asp:RegularExpressionValidator ID="regExpressionValidator2" runat="server" ForeColor="Red" ControlToValidate="confirmedPassword" ValidationExpression="^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" Display="Dynamic" ErrorMessage="Please follow above password guideline. "/>
                                 
                             </td>
 
