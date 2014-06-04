@@ -52,7 +52,7 @@
                             Height="24px" BorderColor="#3366ff"></asp:TextBox>
                     </td>
                     <td class="tdValidator">
-                        <asp:RegularExpressionValidator runat="server" id="NumberValidation" ForeColor="Red" controltovalidate="contact" validationexpression="^[0-9]" errormessage="Please enter only numbers!" />
+                        <asp:RegularExpressionValidator runat="server" id="NumberValidation" ForeColor="Red" controltovalidate="contact" validationexpression="9(7|8)\d\d\d\d\d\d\d\d" errormessage="Please enter only numbers!" />
                     </td>
                 </tr>
                 <tr>
