@@ -1,0 +1,308 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CCMS.Site" %>
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - Deerwalk CCMS</title>
+    <!---------------------------------------------------------------------->
+
+    <link type="text/css" rel="stylesheet" href="~/css/Site.css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <!---------------------------------------------------------------------->
+    <%-- <asp:ContentPlaceHolder ID="head" runat="server" />--%>
+
+
+    <%--For vertical menu Jscript and css --%>
+
+    <link type="text/css" rel="stylesheet" href="~/css/Menu.css" />
+    <link type="text/css" rel="stylesheet" href="~/css/cssmenuUser.css" />
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <script type='text/javascript' src='/Scripts/menu_jquery.js'></script>
+    <script type='text/javascript' src='/Scripts/menu_user_jquery.js'></script>
+
+    <style type="text/css">
+        .tg {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+            .tg td {
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+                padding: 100px 5px;
+                border-style: solid;
+                border-width: 1px;
+                overflow: hidden;
+                word-break: normal;
+            }
+
+            .tg th {
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+                font-weight: normal;
+                padding: 10px 5px;
+                border-style: solid;
+                border-width: 1px;
+                overflow: hidden;
+                word-break: normal;
+            }
+
+        .auto-style3 {
+            width: 962px;
+            padding: 15px 13px 262px 10px;
+        }
+
+        .auto-style4 {
+            width: 87%;
+        }
+
+        .auto-style5 {
+            width: 1032px;
+        }
+
+        .auto-style6 {
+            width: 48%;
+        }
+    </style>
+
+</head>
+<body>
+    <form id="frmMaster" runat="server">
+        <div class="content-wrapper">
+
+
+            <table class="header">
+                <tr class="table">
+                    <td class="auto-style5">
+                        <div class="float-right" style="margin-left: 900px; background-color: #1c4877">
+                            <asp:ContentPlaceHolder ID="cpLogout" runat="server">
+                                <asp:LinkButton ID="btnLogout" CssClass="noline" runat="server" Text="Log Out" ForeColor="WhiteSmoke" OnClick="btnLogout_Click" Visible="true"></asp:LinkButton>
+                            </asp:ContentPlaceHolder>
+                            &nbsp;
+                        </div>
+                        <asp:Image ID="Logo" ImageUrl="~/Images/DWIT.png" runat="server" Width="1008px" />
+                    </td>
+                </tr>
+            </table>
+
+            <div id="navigation">
+                <asp:ContentPlaceHolder ID="menu" runat="server">
+                    <div id='cssmenu'>
+                        <ul>
+
+                            <%--Time Entry--%>
+
+                            <li class='has-sub'><a><span>Time Entry</span></a>
+                                <ul>
+                                    <li>
+                                        <asp:LinkButton ID="lnkTimeEntry" runat="server" Visible="false" CssClass='last'></asp:LinkButton>
+                                    </li>
+
+                                    <li>
+                                        <asp:LinkButton ID="lnkEditTimeSheet" runat="server" Visible="false" CssClass='last'></asp:LinkButton>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <%--USER--%>
+
+                            <li class='has-sub'><a><span>User</span></a>
+                                <ul>
+                                    <li>
+                                        <asp:LinkButton ID="lnkAddUser" runat="server" Visible="false" CssClass='last'></asp:LinkButton>
+                                    </li>
+                                    <li>
+                                        <asp:LinkButton ID="lnkEditUser" runat="server" Visible="false" CssClass='last'></asp:LinkButton>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <%--Faculty--%>
+
+                            <li class='has-sub'><a><span>Faculty</span></a>
+                                <ul>
+                                    <li>
+                                        <asp:LinkButton ID="lnkAddFacultyDetail" runat="server" Visible="false" CssClass='last'></asp:LinkButton>
+                                    </li>
+                                    <li>
+                                        <asp:LinkButton ID="lnkViewFaculty" runat="server" Visible="false" CssClass='last'></asp:LinkButton>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                            <%--Add Batch--%>
+
+
+                            <li class='last'>
+                                <asp:LinkButton ID="lnkAddBatch" runat="server" Visible="false"></asp:LinkButton>
+
+
+                            </li>
+
+                            <%-- Routine--%>
+
+                            <li class='has-sub'><a><span>Routine</span></a>
+                                <ul>
+                                    <li>
+                                        <asp:LinkButton ID="lnkAddRoutine" runat="server" Visible="false" CssClass='last'></asp:LinkButton>
+
+                                    </li>
+
+                                    <li>
+                                        <asp:LinkButton ID="lnkViewRoutine" runat="server" Visible="false" CssClass='last'></asp:LinkButton>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <%--Attendance Report--%>
+
+
+                            <li class='last'>
+                                <asp:LinkButton ID="lnkAttendanceReport" runat="server" Visible="false"></asp:LinkButton>
+                            </li>
+                            <li class='has-sub'><a><span>Student</span></a>
+                                <ul>
+                                    <li>
+                                        <asp:LinkButton ID="lnkAddStudent" runat="server" Visible="false"></asp:LinkButton>
+                            
+                                    </li>
+
+                                    <li>
+                                        <asp:LinkButton ID="lnkEditStudent" runat="server" Visible="false"></asp:LinkButton>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <%--<div>
+                                <ul>
+                                    <li>
+                                        <a>TimeEntry</a>
+                                        <ul>
+                                            <li><a>
+                                                <asp:LinkButton ID="lnkTimeEntry" runat="server" Visible="false" CssClass="noline"></asp:LinkButton></a></li>
+                                            <li><a>
+                                                <asp:LinkButton ID="lnkEditTimeSheet" runat="server" Visible="false" CssClass="noline"></asp:LinkButton></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a>User</a>
+                                        <ul>
+                                            <li><a>
+                                                <asp:LinkButton ID="lnkAddUser" runat="server" Visible="false" CssClass="noline"></asp:LinkButton></a></li>
+                                            <li><a>
+                                                <asp:LinkButton ID="lnkEditUser" runat="server" Visible="false" CssClass="noline"></asp:LinkButton></a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a>Faculty</a>
+                                        <ul>
+                                            <li><a>
+                                                <asp:LinkButton ID="lnkAddFacultyDetail" runat="server" Visible="false" CssClass="noline"></asp:LinkButton>
+                                            </a></li>
+                                            <li><a>
+                                                <asp:LinkButton ID="lnkViewFaculty" runat="server" Visible="false" CssClass="noline"></asp:LinkButton>
+                                            </a></li>
+                                        </ul>
+
+                                    </li>
+
+                                    <li>
+                                        <asp:LinkButton ID="lnkAddBatch" runat="server" Visible="false" CssClass="noline"></asp:LinkButton>
+                                    </li>
+
+                                    <li>
+                                        <a>Routine</a>
+                                        <ul>
+                                            <li><a>
+                                                <asp:LinkButton ID="lnkAddRoutine" runat="server" Visible="false" CssClass="noline"></asp:LinkButton>
+                                            </a></li>
+
+                                            <li><a>
+                                                <asp:LinkButton ID="lnkViewRoutine" runat="server" Visible="false" CssClass="noline"></asp:LinkButton>
+                                            </a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <asp:LinkButton ID="lnkFacultyPage" runat="server" Visible="false" CssClass="noline"></asp:LinkButton>
+                                    </li>
+
+                                    <li>
+
+                                        <asp:LinkButton ID="lnkAttendanceReport" runat="server" Visible="false" CssClass="noline"></asp:LinkButton>
+
+                                    </li>
+
+
+                                </ul>
+
+                            </div>--%>
+                </asp:ContentPlaceHolder>
+                <asp:ContentPlaceHolder ID="menuuser" runat="server">
+                                <div id="cssmenuUser">
+                                    <ul>
+
+                                        <%--Time Entry--%>
+
+                                        <li class='last'>
+                                            <a>
+                                                <asp:LinkButton ID="lnkTimeEntryUser" runat="server" Visible="false"></asp:LinkButton>
+                                                <span>Time Entry</span></a>
+
+                                        </li>
+
+                                        <%--Faculty--%>
+
+
+                                        <li class='last'>
+                                            <asp:LinkButton ID="lnkFacultyPage" runat="server" Visible="false"></asp:LinkButton>
+
+
+                                        </li>
+                                    </ul>
+
+
+                                </div>
+
+                                <%--                                <ul>
+                                    <li><a>
+                                        <asp:LinkButton ID="lnkTimeEntryUser" runat="server" Visible="false" CssClass="noline"></asp:LinkButton>
+
+                                    </a></li>
+
+
+                                    <li><a>
+                                        <asp:LinkButton ID="LinkButton1" runat="server" Visible="false" CssClass="noline"></asp:LinkButton>
+                                    </a></li>
+                                    <li><a>
+                                        <asp:LinkButton ID="LinkButton2" runat="server" Visible="false" CssClass="noline"></asp:LinkButton>
+                                    </a></li>
+
+                                </ul>
+                            </div>--%>
+                            </asp:ContentPlaceHolder>
+            </div>
+            <div class="main-content">
+                
+                <asp:ContentPlaceHolder ID="pageContent" runat="server">
+                </asp:ContentPlaceHolder>
+           
+                <asp:ContentPlaceHolder ID="pageContent2" runat="server" Visible="false">
+                </asp:ContentPlaceHolder> 
+                   
+            </div>
+            <div id="footer">
+                 <footer>
+                    &copy; <%: DateTime.Now.Year %> - Deerwalk Institute of Technology and Deerwalk Inc.
+                </footer>
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>
+

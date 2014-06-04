@@ -1,0 +1,628 @@
+﻿/*********************** Overall ******************************/
+td {
+    color: #000000;
+    letter-spacing: 1pt;
+    word-spacing: 1pt;
+    font-size: 0.95em;
+    text-align: left;
+    font-family: 'Arial Rounded MT', helvetica, sans-serif;
+}
+
+
+/********************* Add Faculty Page Properties ***********************/
+#left {
+    float: left;
+    margin-right: 10px;
+    clear: both;
+}
+
+#right {
+    float: right;
+}
+
+.add_faculty {
+    /*font-size: 14px;
+            height: 350px;
+            float: left;
+            padding: 5px;*/
+    width: 99.5%;
+}
+
+.add_class {
+    font-size: 14px;
+    height: 350px;
+    width: 50%;
+    float: right;
+    margin-top: -350px;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+
+/************************* Master-page Properties*********************/
+.content-wrapper {
+    margin: 0 auto;
+    max-width: 1013px;
+    padding: 0;
+    background-color: #e2e2e2;
+    width: 1022px;
+}
+
+#navigation {
+    width: 210px;
+    height: 350px;
+    float: left;
+}
+
+.main-content {
+    width: 790px;
+    float: left;
+    min-height: 450px;
+    margin-left: 5px;
+    //margin-top:5px;
+}
+
+.allbutton {
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 30px;
+    margin: 26px 70px 12px 2px;
+    color: #FFF;
+    text-align: center;
+    border: solid #427AA8 1px;
+    border-radius: 5px;
+    text-decoration: none;
+    background: #427AA8;
+    background: -moz-linear-gradient(top, #59A3E0 1%, #427AA8 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#59A3E0), color-stop(100%,#427AA8));
+    background: -webkit-linear-gradient(top, #59A3E0 1%,#427AA8 100%);
+    background: -o-linear-gradient(top, #59A3E0 1%,#427AA8 100%);
+    background: #427AA8;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59A3E0', endColorstr='#427AA8',GradientType=0 );
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.25);
+    box-shadow: 0 1px 0 rgba(255,255,255, 0.3), inset 0 1px 0 rgba(255,255,255, 0.3);
+}
+
+    .allbutton:hover {
+        background: #59A3E0;
+        text-decoration: none;
+        filter: none;
+    }
+
+​ .table {
+    width: 100%;
+    background-color: #1c4877;
+}
+
+.row_break {
+    height: 25px;
+}
+
+#pageFrame {
+    margin: auto 0;
+    padding: 0;
+    width: 80%;
+    text-align: left;
+}
+
+
+
+
+.logout-wrapper {
+    background-color: #e2e2e2;
+    padding-bottom: 100px;
+    font-family: 'Arial Rounded MT';
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer {
+    clear: both;
+    width: 100%;
+    background-color: #e2e2e2;
+    font-size: .8em;
+    margin: 0 auto;
+    margin-top: 2em;
+    text-align: center;
+}
+
+
+.noline {
+    color: black;
+    text-decoration: none;
+}
+
+/**************Horizontal Menu Bar Properties***************************/
+/*
+
+body {
+    font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding: 20px 50px 150px;
+    font-size: 13px;
+    text-align: left;
+}
+
+
+ul {
+    text-align: left;
+    display: inline;
+    margin: 0;
+    padding: 15px 4px 17px 0;
+    list-style: none;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+    ul li {
+        font: bold 12px/18px sans-serif;
+        display: inline-block;
+        margin-right: -4px;
+        position: relative;
+        padding: 15px 20px;
+        background: rgba(255,255,255, 0.3); 
+        cursor: pointer;
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        -ms-transition: all 0.2s;
+        -o-transition: all 0.2s;
+        transition: all 0.2s;
+    }
+
+        ul li:hover {
+            background: #427AA8;
+            color: #fff;
+            opacity: 0.9;
+        }
+
+        ul li ul {
+            padding: 0;
+            position: absolute;
+            top: 48px;
+            left: 0;
+            width: 150px;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transiton: opacity 0.2s;
+            -moz-transition: opacity 0.2s;
+            -ms-transition: opacity 0.2s;
+            -o-transition: opacity 0.2s;
+            -transition: opacity 0.2s;
+        }
+
+            ul li ul li {
+                background: #427AA8;
+                display: block;
+                color: #fff;
+                text-shadow: 0 -1px 0 #000;
+            }
+
+                ul li ul li:hover {
+                    background: #808080;
+                }
+
+        ul li:hover ul {
+            display: block;
+            opacity: 0.9;
+            visibility: visible;
+        }*/
+
+/**************************************************************/
+/*********************** Add class page *************************************************************/
+.class-fieldset {
+    width: 70%;
+    margin-top: -180px;
+    margin-bottom: -16px;
+    margin-left: -10px;
+    margin-right: 10px;
+}
+
+.add_new_class {
+    width: 90px;
+}
+
+.inputColumn {
+    width: 200px;
+    height: 50px;
+}
+
+.tdLegend {
+    color: #000000;
+    letter-spacing: 1pt;
+    word-spacing: 1pt;
+    font-size: 0.95em;
+    text-align: left;
+    font-family: 'Arial Rounded MT', helvetica, sans-serif;
+    width: 100px;
+    max-height: 29px;
+}
+
+.control-validator-box {
+    width: 210px;
+    height: 20px;
+}
+
+#endDateCalendar_Button {
+    margin-top: 15px;
+}
+/************************* Add user page properties************************/
+
+.btndata {
+    width: 50%;
+}
+
+
+.addUser-wrapper {
+    width: 980px;
+}
+
+.add_user_table {
+    width: 99%;
+}
+
+.tdInput {
+    //width: 30%;
+    float: left;
+}
+
+.tdValidator {
+    color: #000000;
+    letter-spacing: 1pt;
+    word-spacing: 1pt;
+    font-size: 0.95em;
+    text-align: left;
+    font-family: 'Arial Rounded MT', helvetica, sans-serif;
+    min-width: 45%;
+    max-height: 29px;
+    float: left;
+    padding-left: 25px;
+    line-height: 27px;
+}
+
+
+fieldset {
+    width: 94%;
+    /*margin-right: 20px;*/
+    margin-left: 10px;
+    float: left;
+    margin-top: 5px;
+}
+
+legend {
+    font-family: 'Arial Rounded MT', helvetica, sans-serif;
+    font-weight: bold;
+}
+/************************* Default.Aspx page Properties****************/
+.content {
+    margin: 0 auto;
+    width: 0px;
+    height: 70px; /*Makes the default.aspx page go up but pixel doesn't matter*/
+}
+
+.labels {
+    color: #000000;
+    letter-spacing: 1pt;
+    word-spacing: 1pt;
+    font-size: 1em;
+    text-align: left;
+    font-family: 'Arial Rounded MT', helvetica, sans-serif;
+    line-height: 1;
+    height: 30px;
+    width: 279px;
+}
+
+.auto-style1 {
+    color: #000000;
+    letter-spacing: 1pt;
+    word-spacing: 1pt;
+    font-size: 1em;
+    text-align: left;
+    font-family: 'Arial Rounded MT', helvetica, sans-serif;
+    width: 20%;
+    max-height: 59px;
+}
+
+.auto-style2 {
+    color: #000000;
+    letter-spacing: 1pt;
+    word-spacing: 1pt;
+    font-size: 0.95em;
+    text-align: left;
+    font-family: 'Arial Rounded MT', helvetica, sans-serif;
+    width: 5%;
+    max-height: 29px;
+    //max-width: 15%;
+}
+
+.all-texts {
+    color: #000000;
+    letter-spacing: 1pt;
+    word-spacing: 1pt;
+    font-size: 0.95em;
+    text-align: left;
+    font-family: 'Arial Rounded MT', helvetica, sans-serif;
+    height: 80px;
+    width: 664px;
+    //margin-left:10px;
+}
+
+.pageName {
+    color: #000;
+    font-size: 2em;
+    font-family: 'Arial Rounded MT', 'Times New Roman';
+    font-style: normal;
+    /*height: 19px;*/
+}
+/******************************* Add Class ************************************/
+.small {
+    color: #000000;
+    letter-spacing: 1pt;
+    word-spacing: 1pt;
+    font-size: 0.95em;
+    text-align: left;
+    font-family: 'Arial Rounded MT', helvetica, sans-serif;
+    width: 10%;
+}
+
+/*tr .  */
+tr {
+    width: 100%;
+}
+
+
+td .small {
+    width: 5%;
+    padding: 5px;
+}
+/*********************** overall **********************************************/
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clear-both {
+    clear: both;
+    margin-left: 35%;
+}
+
+.header {
+    background-color: #1c4877;
+}
+
+
+
+/*Button Design */
+
+.allbutton {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 30px;
+    margin: 19px 163px 20px 2px;
+    font-family: 'Arial Rounded MT', helvetica, sans-serif;
+    color: #FFF;
+    text-align: center;
+    border: solid #427AA8 1px;
+    border-radius: 0px;
+    text-decoration: none;
+    /* Gradient */
+    background: #427AA8;
+    background: -moz-linear-gradient(top, #59A3E0 1%, #427AA8 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#59A3E0), color-stop(100%,#427AA8));
+    background: -webkit-linear-gradient(top, #59A3E0 1%,#427AA8 100%);
+    background: -o-linear-gradient(top, #59A3E0 1%,#427AA8 100%);
+    background: #427AA8;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59A3E0', endColorstr='#427AA8',GradientType=0 );
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.25);
+    box-shadow: 0 1px 0 rgba(255,255,255, 0.3), inset 0 1px 0 rgba(255,255,255, 0.3);
+}
+
+    .allbutton:hover {
+        background: #59A3E0;
+        text-decoration: none;
+        filter: none;
+    }
+
+/* Menu User*/
+
+
+#cssmenuUser,
+#cssmenuUser ul,
+#cssmenuUser ul li,
+#cssmenuUser ul li a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    line-height: 1;
+    display: block;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+#cssmenuUser {
+    width: 219px;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #ffffff;
+}
+
+    #cssmenuUser ul ul {
+        display: none;
+    }
+
+.align-right {
+    float: right;
+}
+
+
+#cssmenuUser > ul > li > a {
+    padding: 15px 20px;
+    border-left: 1px solid #A5C1CF;
+    border-right: 1px solid #1682ba;
+    border-top: 1px solid #1682ba;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+    background: #36aae7;
+    background: -webkit-linear-gradient(#36aae7, #003450);
+    background: -moz-linear-gradient(#36aae7, #1fa0e4);
+    background: -o-linear-gradient(#36aae7, #1fa0e4);
+    background: -ms-linear-gradient(#36aae7, #1fa0e4);
+    background: linear-gradient(#1C4877, #1C4877);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+    #cssmenuUser > ul > li > a:hover,
+    #cssmenuUser > ul > li.active > a,
+    #cssmenuUser > ul > li.open > a {
+        color: #eeeeee;
+        background: #1fa0e4;
+        background: -webkit-linear-gradient(#1fa0e4, #1992d1);
+        background: -moz-linear-gradient(#1fa0e4, #1992d1);
+        background: -o-linear-gradient(#1fa0e4, #1992d1);
+        background: -ms-linear-gradient(#1fa0e4, #1992d1);
+        background: linear-gradient(#1fa0e4, #1992d1);
+    }
+
+#cssmenuUser > ul > li.open > a {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid #1682ba;
+}
+
+#cssmenuUser > ul > li:last-child > a,
+#cssmenuUser > ul > li.last > a {
+    border-bottom: 1px solid #1682ba;
+}
+
+.holder {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+    .holder::after,
+    .holder::before {
+        display: block;
+        position: absolute;
+        content: '';
+        width: 6px;
+        height: 6px;
+        right: 20px;
+        z-index: 10;
+        -webkit-transform: rotate(-135deg);
+        -moz-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
+        -o-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+    }
+
+    .holder::after {
+        top: 17px;
+        border-top: 2px solid #ffffff;
+        border-left: 2px solid #ffffff;
+    }
+
+#cssmenuUser > ul > li > a:hover > span::after,
+#cssmenuUser > ul > li.active > a > span::after,
+#cssmenuUser > ul > li.open > a > span::after {
+    border-color: #eeeeee;
+}
+
+.holder::before {
+    top: 18px;
+    border-top: 2px solid;
+    border-left: 2px solid;
+    border-top-color: inherit;
+    border-left-color: inherit;
+}
+
+#cssmenuUser ul ul li a {
+    cursor: pointer;
+    border-bottom: 1px solid #32373e;
+    border-left: 1px solid #32373e;
+    border-right: 1px solid #32373e;
+    padding: 10px 20px;
+    z-index: 1;
+    text-decoration: none;
+    font-size: 13px;
+    color: #eeeeee;
+    background: #49505a;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+#cssmenuUser ul ul li:hover > a,
+#cssmenuUser ul ul li.open > a,
+#cssmenuUser ul ul li.active > a {
+    background: #424852;
+    color: #ffffff;
+}
+
+#cssmenuUser ul ul li:first-child > a {
+    box-shadow: none;
+}
+
+#cssmenuUser ul ul ul li:first-child > a {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+#cssmenuUser ul ul ul li a {
+    padding-left: 30px;
+}
+
+#cssmenuUser > ul > li > ul > li:last-child > a,
+#cssmenuUser > ul > li > ul > li.last > a {
+    border-bottom: 0;
+}
+
+#cssmenuUser > ul > li > ul > li.open:last-child > a,
+#cssmenuUser > ul > li > ul > li.last.open > a {
+    border-bottom: 1px solid #32373e;
+}
+
+#cssmenuUser > ul > li > ul > li.open:last-child > ul > li:last-child > a {
+    border-bottom: 0;
+}
+
+#cssmenuUser ul ul li.has-sub > a::after {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 5px;
+    height: 5px;
+    right: 20px;
+    z-index: 10;
+    top: 11.5px;
+    border-top: 2px solid #eeeeee;
+    border-left: 2px solid #eeeeee;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+#cssmenuUser ul ul li.active > a::after,
+#cssmenuUser ul ul li.open > a::after,
+#cssmenuUser ul ul li > a:hover::after {
+    border-color: #ffffff;
+}
+
+/* Table */
