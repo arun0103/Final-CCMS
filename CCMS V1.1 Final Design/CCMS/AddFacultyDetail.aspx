@@ -13,12 +13,14 @@
                             Height="24px" BorderColor="#3366ff" AutoPostBack="true" OnSelectedIndexChanged="EmailIndexChanged">
                             
                         </asp:DropDownList>
-                        <%--<asp:TextBox ID="txtEmail" runat="server" Width="200px" Font-Size="14px"
-                            Height="24px" BorderColor="#3366ff"></asp:TextBox>--%>
+                        
                     </td>
-                    <td class="tdValidator">
-                        <asp:RequiredFieldValidator ID="AFD_email" runat="server" ErrorMessage="You must choose Email" ForeColor="Red" ControlToValidate="EmailList" EnableClientScript="False"></asp:RequiredFieldValidator>
+                    <td>
+                        <asp:RequiredFieldValidator ID="emailValidator" runat="server" ControlToValidate="EmailList"
+                ErrorMessage="Please Choose Email" InitialValue="---Select Email---"></asp:RequiredFieldValidator>
+
                     </td>
+                    
                 </tr>
                 <tr>
                     <td class="tdLegend">First Name
@@ -27,9 +29,7 @@
                         <asp:TextBox ID="firstName" runat="server" Width="200px" Font-Size="14px"
                             Height="24px" BorderColor="#3366ff"></asp:TextBox>
                     </td>
-                    <td class="tdValidator">
-                        <asp:RequiredFieldValidator ID="AFD_firstname" runat="server" ErrorMessage="You must enter Firstname" ForeColor="Red" ControlToValidate="firstName" EnableClientScript="False"></asp:RequiredFieldValidator>
-                    </td>
+                    
                 </tr>
                 <tr>
                     <td class="tdLegend">Last Name
@@ -38,9 +38,7 @@
                         <asp:TextBox ID="lastName" runat="server" Width="200px" Font-Size="14px"
                             Height="24px" BorderColor="#3366ff"></asp:TextBox>
                     </td>
-                    <td class="tdValidator">
-                        <asp:RequiredFieldValidator ID="AFD_lastname" runat="server" ErrorMessage="You must enter Lastname" ForeColor="Red" ControlToValidate="lastName" EnableClientScript="False"></asp:RequiredFieldValidator>
-                    </td>
+                    
                 </tr>
                 
 
@@ -52,7 +50,7 @@
                             Height="24px" BorderColor="#3366ff"></asp:TextBox>
                     </td>
                     <td class="tdValidator">
-                        <asp:RegularExpressionValidator runat="server" id="NumberValidation" ForeColor="Red" controltovalidate="contact" validationexpression="^[0-9]" errormessage="Please enter only numbers!" />
+                        <asp:RegularExpressionValidator runat="server" id="NumberValidation" ForeColor="Red" controltovalidate="contact" validationexpression="9(7|8)\d\d\d\d\d\d\d\d" errormessage="Nepal's Cell Number are of 10 digit like 9841XXXXXX!" />
                     </td>
                 </tr>
                 <tr>
