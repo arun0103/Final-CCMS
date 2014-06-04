@@ -29,10 +29,15 @@ namespace CCMS
 
         protected void btnUpgrade_Click(object sender, EventArgs e)
         {
-            int affectedRows = 0;
-            affectedRows = CCMSBusinessLayer.UpgradeStudentClass(Convert.ToInt32(ddlFrom.SelectedValue), Convert.ToInt32(ddlTo.SelectedValue));
-            lblsuccssMsg.Text = affectedRows + " Student records were upgraded Sussfully";
-            lblsuccssMsg.Visible = true;
+            rvfClassFrom.Enabled = true;
+            Page.Validate();
+            if (Page.IsValid)
+            {
+                int affectedRows = 0;
+                affectedRows = CCMSBusinessLayer.UpgradeStudentClass(Convert.ToInt32(ddlFrom.SelectedValue), Convert.ToInt32(ddlTo.SelectedValue));
+                lblsuccssMsg.Text = affectedRows + " Student records were upgraded Sussfully";
+                lblsuccssMsg.Visible = true;
+            }
         }
 
         protected void ddlFrom_SelectedIndexChanged(object sender, EventArgs e)

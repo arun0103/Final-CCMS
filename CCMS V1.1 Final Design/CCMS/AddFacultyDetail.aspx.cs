@@ -27,7 +27,7 @@ namespace CCMS
 
         public void BindEmailDropdown()
         {
-            string command = "Select UserID, UserEmail from Users where role = 'Faculty' order by UserEmail";
+            string command = "Select UserID, UserEmail from Users order by UserEmail";
             DataTable EmailTable = new DataTable();
 
 
@@ -80,47 +80,44 @@ namespace CCMS
         #region Check in Click
         protected void addBtn_Click(object sender, EventArgs e)
         {
-
+            AFD_firstname.Enabled = true;
+            AFD_lastname.Enabled = true;
+            AFD_email.Enabled = true;
             NumberValidation.Enabled = true;
-            Page.Validate();
-            if (Page.IsValid)
+
+            if (firstName.Text != "" && lastName.Text != "" && EmailList.SelectedIndex != 0)
             {
-                
 
-                if (firstName.Text != "" && lastName.Text != "" && EmailList.SelectedIndex != 0)
+                Faculty faculty = new Faculty
                 {
+                    Active = activeCB.Checked,
+                    Contact = contact.Text,
+                   //Email = txtEmail.Text,
+                   Email = EmailList.SelectedItem.Text,
+                    LastName = lastName.Text,
+                    FirstName = firstName.Text,
+                    UserId = findUserID(EmailList.SelectedValue)
+                };
 
-                    Faculty faculty = new Faculty
-                    {
-                        Active = activeCB.Checked,
-                        Contact = contact.Text,
-                        //Email = txtEmail.Text,
-                        Email = EmailList.SelectedItem.Text,
-                        LastName = lastName.Text,
-                        FirstName = firstName.Text,
-                        UserId = findUserID(EmailList.SelectedValue)
-                    };
+                int added = CCMSBusinessLayer.AddFaculty(faculty);
 
-                    int added = CCMSBusinessLayer.AddFaculty(faculty);
-
-                    if (added > 0)
-                    {
-                        ScriptManager.RegisterStartupScript(this, GetType(), "Success", "alert('Faculty detail is successfully recorded.');", true);
-                        //string connectionString = ConfigurationManager.ConnectionStrings["dbConnection"].ConnectionString;
-                        //string sqlQuery = "select * from faculty";
-                        //using (SqlConnection con = new SqlConnection(connectionString))
-                        //{
-                        //    SqlCommand cmd = new SqlCommand(sqlQuery, con);
-                        //    con.Open();
-                        //    SqlDataReader rdr = cmd.ExecuteReader();
-                        //    FacultyGridView.DataSource = rdr;
-                        //    FacultyGridView.DataBind();
-                        //}
-                        //ContentPlaceHolder mcon = new ContentPlaceHolder();
-                        //mcon = (ContentPlaceHolder)Master.FindControl("pageContent2");
-                        //mcon.Visible = true;
-                        Reset();
-                    }
+                if (added > 0)
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Success", "alert('Faculty detail is successfully recorded.');", true);
+                    //string connectionString = ConfigurationManager.ConnectionStrings["dbConnection"].ConnectionString;
+                    //string sqlQuery = "select * from faculty";
+                    //using (SqlConnection con = new SqlConnection(connectionString))
+                    //{
+                    //    SqlCommand cmd = new SqlCommand(sqlQuery, con);
+                    //    con.Open();
+                    //    SqlDataReader rdr = cmd.ExecuteReader();
+                    //    FacultyGridView.DataSource = rdr;
+                    //    FacultyGridView.DataBind();
+                    //}
+                    //ContentPlaceHolder mcon = new ContentPlaceHolder();
+                    //mcon = (ContentPlaceHolder)Master.FindControl("pageContent2");
+                    //mcon.Visible = true;
+                    Reset();
                 }
             }
         }
@@ -135,22 +132,21 @@ namespace CCMS
             //txtEmail.Text = String.Empty;
             contact.Text = String.Empty;
             activeCB.Checked = false;
-            
+            NumberValidation.Enabled = false;
             updateMsg.Visible = false;
 
         }
 
         protected void clearBtn_Click1(object sender, EventArgs e)
         {
-            NumberValidation.Enabled = false;
-            NumberValidation.Visible = false;
             Reset();
         }
 
         protected void makeControlValidationFalse()
         {
-            emailValidator.Enabled = false;
-            
+            AFD_firstname.Enabled = false;
+            AFD_lastname.Enabled = false;
+            AFD_email.Enabled = false;
         }
     }
 }

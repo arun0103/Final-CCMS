@@ -68,7 +68,7 @@
                     <td class="inputColumn">
                         <asp:DropDownList ID="section_drp" runat="server" Width="200px" Font-Size="14px"
                             Height="24px" BorderColor="#3366ff" AutoPostBack="true">
-                            <asp:ListItem>--- Select Section ---</asp:ListItem>
+                            
                             <asp:ListItem>A</asp:ListItem>
                             <asp:ListItem>B</asp:ListItem>
                         </asp:DropDownList>

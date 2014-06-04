@@ -165,7 +165,7 @@
                             <li class='last'>
                                 <asp:LinkButton ID="lnkAttendanceReport" runat="server" Visible="false"></asp:LinkButton>
                             </li>
-                            <li class='has-sub'><a><span>Student</span></a>
+                            <li class='has-sub'><a><span>Students</span></a>
                                 <ul>
                                     <li>
                                         <asp:LinkButton ID="lnkAddStudent" runat="server" Visible="false"></asp:LinkButton>

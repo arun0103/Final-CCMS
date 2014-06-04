@@ -261,7 +261,6 @@
 
         <div>
 
-            <fieldset>
                 <asp:Label ID="lblText" runat="server" Visible="false" />
                 <%--commented for not responding--%>
                 <asp:Panel ID="panel1" runat="server" Visible="True" CssClass="panel">
@@ -290,7 +289,7 @@
                 <asp:Button ID="btnExport" CssClass="allbutton" runat="server" Text="Export to Excel" OnClick="btnExport_Click" Style="height: 26px" Width="200px" Visible="false" />
                 <asp:DropDownList ID="drpAttendees" runat="server" AutoPostBack="true" Visible=" false"></asp:DropDownList>
             </div>
-        </fieldset>    
+           
     </div>
 
 </asp:Content>
