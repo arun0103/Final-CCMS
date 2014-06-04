@@ -54,12 +54,13 @@
         
 
     </style>
-
-    <table class="clsTable">
+    <div class="main-content">
+        <fieldset>
+    <table>
         <tr>
             <td></td>
             <td class ="clsTd">
-            <asp:Label ID="LblWelcome" runat="server"></asp:Label>
+            <b><asp:Label ID="LblWelcome" runat="server"></asp:Label></b>
             </td >
 
         </tr>
@@ -86,8 +87,7 @@
                         <WeekendDayStyle BackColor="#CCCCFF" />
              </asp:Calendar>
         </div>
-        <table
-            >
+        <table>
             <tr>
                   <td class ="clsTd2">
                            Attendance Date : <asp:TextBox ID="recordDateV" runat="server" BorderColor="#3366FF" Font-Size="14px" Height="24px" CssClass="box" Width="220px"  ></asp:TextBox>
@@ -115,7 +115,7 @@
      
 
 
-    
-
+    </fieldset>
+</div>
 
 </asp:Content>

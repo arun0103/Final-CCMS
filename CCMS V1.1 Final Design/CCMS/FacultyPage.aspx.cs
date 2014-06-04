@@ -34,7 +34,7 @@ namespace CCMS
                 OpenConnection();
 
                 LblWelcome.ForeColor = System.Drawing.Color.Black;
-                LblWelcome.Text = "Log in as : " + cmd.ExecuteScalar().ToString();
+                LblWelcome.Text = "Logged in as : " + cmd.ExecuteScalar().ToString();
 
                 LblDate.Text = "Today's Date : " + DateTime.Now.ToShortDateString();
                 LblDate.ForeColor = System.Drawing.Color.Black;

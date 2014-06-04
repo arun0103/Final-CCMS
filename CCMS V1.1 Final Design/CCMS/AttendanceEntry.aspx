@@ -56,7 +56,8 @@
         }      
 
     </style>
-    
+    <div class="main-content">
+        <fieldset>
     <div class="layout1">
         <asp:Panel ID="panelWrapper" runat="server" Visible="True" CssClass="panel">
             <div style="position:absolute; margin-left:290px; margin-top:35px;">
@@ -152,5 +153,6 @@
         <div style="padding:20px 0px 0px 50px;">
             <asp:Button ID="ButtonSave" runat="server" Text="Save" OnClick="saveAttendance" />
         </div>
-
+            </fieldset>
+    </div>
 </asp:Content>
