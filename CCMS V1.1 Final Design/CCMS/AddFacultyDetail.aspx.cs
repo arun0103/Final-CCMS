@@ -84,6 +84,7 @@ namespace CCMS
             AFD_lastname.Enabled = true;
             AFD_email.Enabled = true;
             NumberValidation.Enabled = true;
+            Page.Validate();
 
             if (Page.IsValid)
             {
