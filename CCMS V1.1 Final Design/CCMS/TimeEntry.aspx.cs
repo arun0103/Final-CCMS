@@ -25,32 +25,37 @@ namespace CCMS
         #region Page Load
         protected void Page_Load(object sender, EventArgs e)
         {
-           
 
-            checkID = Convert.ToInt32(Session["UserId"]);
-            CreateConnection();
-            cmd = new SqlCommand();
-            cmd.CommandText = "Select FirstName + ' ' + LastName As FullName FROM Users where UserID=" +checkID;            
-            
-            cmd.Connection = conDatabase;
-
-            try
+            if (!IsPostBack)
             {
-                OpenConnection();
+                checkID = Convert.ToInt32(Session["UserId"]);
+                CreateConnection();
+                cmd = new SqlCommand();
+                cmd.CommandText = "Select FirstName + ' ' + LastName As FullName FROM Users where UserID=" + checkID;
 
-                LblWelcome.ForeColor = System.Drawing.Color.Black;
-                LblWelcome.Text = "<b>Welcome,</b> "+ cmd.ExecuteScalar().ToString();
-                
-                LblDate.Text = "<b>Today's Date:</b> " + DateTime.Now.ToString();
-                LblDate.ForeColor = System.Drawing.Color.Black;
-                if (checkID >= 1)
+                cmd.Connection = conDatabase;
+
+                try
                 {
-                    CheckIfUserCheckedIn(checkID);
+                    OpenConnection();
+
+                    LblWelcome.ForeColor = System.Drawing.Color.Black;
+                    LblWelcome.Text = "<b>Welcome,</b> " + cmd.ExecuteScalar().ToString();
+
+                    LblDate.Text = "<b>Today's Date:</b> " + DateTime.Now.ToString();
+                    LblDate.ForeColor = System.Drawing.Color.Black;
+                    if (checkID >= 1)
+                    {
+                        CheckIfUserCheckedIn(checkID);
+                    }
+                }
+                finally
+                {
+                    CloseConnection();
+
                 }
             }
-            finally {
-                CloseConnection();
-            }            
+                    
         }
         #endregion
 

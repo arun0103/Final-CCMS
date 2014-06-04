@@ -11,7 +11,7 @@ namespace CCMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-    //        pageContent2.Visible = false;
+    
             if (Session["UserId"] == null)
             {
                 btnLogout.Visible = false;
@@ -26,6 +26,8 @@ namespace CCMS
             if (Session["Role"] != null && String.Compare(Session["Role"].ToString(),"Admin",true)==0)
             {
                 menuuser.Visible = false;
+                menu.Visible = true;
+                menubar.Visible = true;
                 if (String.Compare(Session["isPasswordUpdated"].ToString(), "False", true) == 0)
                 {
                     lnkAddUser.Visible = false;
@@ -90,10 +92,11 @@ namespace CCMS
                 menu.Visible = false;
                 if (String.Compare(Session["isPasswordUpdated"].ToString(), "True", true) == 0)
                 {
-
-                    lnkTimeEntry.Visible = true;
-                    lnkTimeEntry.Text = "Time Entry";
-                    lnkTimeEntry.PostBackUrl = "~/TimeEntry.aspx";
+                    menubaruser.Visible = true;
+                    menuuser.Visible = true;
+                    lnkTimeEntryUser.Visible = true;
+                    lnkTimeEntryUser.Text = "Time Entry";
+                    lnkTimeEntryUser.PostBackUrl = "~/TimeEntry.aspx";
                     lnkFacultyPage.Visible = true;
                     lnkFacultyPage.Text = "Faculty";
                     lnkFacultyPage.PostBackUrl = "~/FacultyPage.aspx";
@@ -113,18 +116,19 @@ namespace CCMS
                 menu.Visible = false;
                 if (String.Compare(Session["isPasswordUpdated"].ToString(), "True", true) == 0)
                 {
+                    menubaruser.Visible = true;
+                    menuuser.Visible = true;
+                    lnkTimeEntryUser.Visible = true;
+                    lnkTimeEntryUser.Text = "Time Entry";
+                    lnkTimeEntryUser.PostBackUrl = "~/TimeEntry.aspx";
 
-                    lnkTimeEntry.Visible = true;
-                    lnkTimeEntry.Text = "Time Entry";
-                    lnkTimeEntry.PostBackUrl = "~/TimeEntry.aspx";
-                    
 
                 }
 
                 else
                 {
                     lnkTimeEntry.Visible = false;
-                    
+
                 }
 
 

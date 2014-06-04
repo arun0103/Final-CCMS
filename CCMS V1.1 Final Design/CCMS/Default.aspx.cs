@@ -72,7 +72,7 @@ namespace CCMS
                                 hash = md.getMd5Hash(md5Hash, pass_salt);
                             }
                             if (hashValue == hash)
-                            //if (inputPass == txtPassword.Text)
+                            
                             {
 
                                 Session["UserId"] = UserID;
@@ -81,9 +81,14 @@ namespace CCMS
                                 Session["password"] = txtPassword.Text;
 
 
-                                if (isPasswordUpdated.Equals("False"))
+                                if (isPasswordUpdated.Equals(""))
                                 {
-
+                                    Panel p = (Panel)Master.FindControl("menubar");
+                                    p.Visible = false;
+                                    ContentPlaceHolder cp = (ContentPlaceHolder)Master.FindControl("menu");
+                                    cp.Visible = false;
+                                    ContentPlaceHolder cpuser = (ContentPlaceHolder)Master.FindControl("menuuser");
+                                    cpuser.Visible = false;
                                     Response.Redirect("FirstLoginPasswordChange.aspx");
 
                                 }

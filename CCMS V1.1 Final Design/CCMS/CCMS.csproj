@@ -68,6 +68,7 @@
     <Content Include="CSS\MenuUser.css" />
     <Content Include="CSS\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="EditStudents.aspx" />
     <Content Include="EditTimeEntry.aspx" />
     <Content Include="EditUserDetails.aspx" />
     <Content Include="FacultyPage.aspx" />
@@ -140,6 +141,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditStudents.aspx.cs">
+      <DependentUpon>EditStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditStudents.aspx.designer.cs">
+      <DependentUpon>EditStudents.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditTimeEntry.aspx.cs">
       <DependentUpon>EditTimeEntry.aspx</DependentUpon>

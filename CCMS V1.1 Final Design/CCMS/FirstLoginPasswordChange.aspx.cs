@@ -139,8 +139,18 @@ namespace CCMS
             
         }
 
+        /* redirect user to respective page after password change*/ 
         public void passwordChange(Object sender, EventArgs e) 
         {
+            //making default panel of Faculty of Site.Master visible
+            System.Web.UI.WebControls.Panel p = (System.Web.UI.WebControls.Panel)Master.FindControl("menubar");
+            p.Visible = true;
+
+            //making default ContentPlaceholder of Site.Master  visible
+            ContentPlaceHolder cpuser = (ContentPlaceHolder)Master.FindControl("menuuser");
+            cpuser.Visible = true;
+
+            //redirecting user to Timeentry page
             Response.Redirect("TimeEntry.aspx");   
         }
     }

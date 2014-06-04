@@ -19,13 +19,14 @@
         <asp:RadioButtonList ID="RadioButtonListHDR" runat="server">
             <asp:ListItem Selected="True" Value="yes">Yes</asp:ListItem>
             <asp:ListItem Value="no">No</asp:ListItem>
-        </asp:RadioButtonList> <br /><br />
+        </asp:RadioButtonList> 
+        <br /><br />
         <asp:Button ID="btnShow" runat="server" Text="Show Data" OnClick="btnShow_Click" />
       
     </asp:Panel>
     
-    <asp:Panel ID="GridViewPanel" runat="server">
-        <asp:GridView ID="GridViewStudents" runat="server" CellPadding="4" 
+    <asp:Panel ID="GridViewPanel" runat="server" Visible="False">
+        <asp:GridView ID="GridViewStudents" runat="server" CellPadding="30" 
         ForeColor="#333333" GridLines="None" AllowPaging="True" 
             OnPageIndexChanging="PageIndexChanging" PageSize="20" >
             <AlternatingRowStyle BackColor="White" />
@@ -43,12 +44,24 @@
         </asp:GridView>
 
          <br />
+        <asp:Label ID="lblClass" runat="server" Text="Class:  "></asp:Label>
+        <asp:DropDownList ID="ddlClass" runat="server">
+        </asp:DropDownList>
+        <asp:RequiredFieldValidator ID="rfvClass" runat="server" 
+            ControlToValidate="ddlClass" ErrorMessage="You must choose Class" 
+            ForeColor="Red" InitialValue="-1"></asp:RequiredFieldValidator>
+        <br />
+        <br />
         <asp:Button ID="btnSaveStudents" runat="server" onclick="SaveStudents_Click" 
             Text="Save in Database" Visible="False" />
         <br />
         <asp:Label ID="successMsg" runat="server" Visible="False"></asp:Label>
 
     </asp:Panel>
+
+    
+        <%--This is invisible temporary GridView (without paging) just to bind all data from excel sheet and do bulk insert --%>
         <asp:GridView ID="tempGridView" runat="server" Visible="false">
         </asp:GridView>
+
 </asp:Content>

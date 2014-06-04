@@ -58,6 +58,15 @@ namespace CCMS {
         protected global::System.Web.UI.WebControls.Image Logo;
         
         /// <summary>
+        /// menubar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel menubar;
+        
+        /// <summary>
         /// menu control.
         /// </summary>
         /// <remarks>
@@ -173,6 +182,15 @@ namespace CCMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkEditStudent;
+        
+        /// <summary>
+        /// menubaruser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel menubaruser;
         
         /// <summary>
         /// menuuser control.

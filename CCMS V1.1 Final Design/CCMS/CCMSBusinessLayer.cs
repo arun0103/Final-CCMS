@@ -65,6 +65,7 @@ namespace CCMS
 
             CreateConnection();
             cmd = new SqlCommand();
+            //cmd.CommandText = "select A.RollNo,S.FirstName+' '+S.LastName as Name,A.Attendance from StudentAttendance A inner join students S on A.RollNo = S.RollNo inner join StudentClass SC on SC.rollNo = S.RollNo inner join class C on SC.ClassId = C.ClassId inner join routine R on R.EnrollYear = C.ClassName and C.Section = R.SectionName inner join faculty F on F.UserId = R.Fid inner join Syllabus Sy on Sy.Subject_Code = R.SubjectId where convert(varchar(10) , AttendanceDate, 120) = @changeDate and R.Fid = @fid and R.SubjectId=@subjectCode and R.SectionName=@sectionName";
             cmd.CommandText = "select A.RollNo,S.FirstName+' '+S.LastName as Name,A.Attendance from StudentAttendance A inner join students S on A.RollNo = S.RollNo inner join StudentClass SC on SC.rollNo = S.RollNo inner join class C on SC.ClassId = C.ClassId inner join routine R on R.EnrollYear = C.ClassName and C.Section = R.SectionName inner join faculty F on F.UserId = R.Fid inner join Syllabus Sy on Sy.Subject_Code = R.SubjectId where convert(varchar(10) , AttendanceDate, 120) = @changeDate and A.FacultyClassId = @fid and  Sy.Subject_Name= @subjectName and R.SectionName=@sectionName";
             cmd.Parameters.AddWithValue("@fid", facultyClassId);
             cmd.Parameters.AddWithValue("@sectionName", sectionName);
@@ -72,12 +73,13 @@ namespace CCMS
             cmd.Parameters.AddWithValue("@changeDate", changeDate);
 
             cmd.Connection = conDatabase;
+
             try
             {
                 OpenConnection();
 
                 SqlDataReader sdr = cmd.ExecuteReader();
-                if (sdr.Read())
+                if (sdr.HasRows)
                 {
                     return sdr;
                 }
@@ -85,12 +87,16 @@ namespace CCMS
                 {
                     return null;
                 }
+
             }
 
             catch
             {
                 throw new Exception();
+
             }
+
+
         }
 
 
@@ -369,5 +375,28 @@ namespace CCMS
             }
             return false;
         }
+
+        public static int UpgradeStudentClass(int from, int to)
+        {
+            int inserted = 0;
+
+            string procedurName = "spUpgradeClass";
+
+            SqlParameter[] parameters = new SqlParameter[2];
+
+            parameters[0] = new SqlParameter("@ClassIdFrom", from);
+            parameters[1] = new SqlParameter("@ClassIdTo", to);
+
+            inserted = DataService.InsertIntoDatabaseSP(procedurName, parameters);
+
+            return inserted;
+        }
+
+        public static DataTable GetClass()
+        {
+            string sqlQuery = "select classid, semester + ' Semester - Section ' + section as Class from class";
+            return DataService.GetDataWithoutParameter(sqlQuery);
+        }
+
     }
 }

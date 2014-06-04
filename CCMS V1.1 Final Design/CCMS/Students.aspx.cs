@@ -14,7 +14,7 @@ namespace CCMS
 {
     public partial class Students : System.Web.UI.Page
     {
-        static DataTable dt = new DataTable();
+        DataTable dt = new DataTable();
         static string FileName;
         static string Extension;
         static string FolderPath;
@@ -24,6 +24,20 @@ namespace CCMS
         protected void Page_Load(object sender, EventArgs e)
         {
             successMsg.Visible = false;
+            if (!IsPostBack)
+            {
+
+                BindClassDropDown();
+            }
+        }
+
+        private void BindClassDropDown()
+        {
+            ddlClass.DataSource = CCMSBusinessLayer.GetClass();
+            ddlClass.DataValueField = "classid";
+            ddlClass.DataTextField = "Class";
+            ddlClass.DataBind();
+            ddlClass.Items.Insert(0, new ListItem("Select Class", "-1"));
         }
 
         protected void ButtonUpload_Click(object sender, EventArgs e)
@@ -88,7 +102,7 @@ namespace CCMS
 
         protected void PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-
+            ImportToGrid(FilePath, Extension);
             GridViewStudents.DataSource = dt; 
             GridViewStudents.PageIndex = e.NewPageIndex;
             GridViewStudents.DataBind();  
@@ -97,6 +111,7 @@ namespace CCMS
         protected void btnShow_Click(object sender, EventArgs e)
         {
             ImportToGrid(FilePath, Extension);
+            GridViewPanel.Visible = true;
             btnSaveStudents.Visible = true;
         }
 
@@ -122,13 +137,13 @@ namespace CCMS
         {
 
             DataTable tempStudentTable = new DataTable();
-            tempStudentTable.Columns.Add("rollNo", typeof(int));
+            tempStudentTable.Columns.Add("rollNo", typeof(string));
             tempStudentTable.Columns.Add("firstName", typeof(string));
             tempStudentTable.Columns.Add("lastName", typeof(string));
             tempStudentTable.Columns.Add("email", typeof(string));
 
             DataRow dr = null;
-
+            
             foreach (GridViewRow gr in tempGridView.Rows)
             {
                 dr = tempStudentTable.NewRow();
@@ -142,34 +157,13 @@ namespace CCMS
             }
 
             DataTable StudentTable = tempStudentTable.GetChanges(DataRowState.Added);
-            string connectionString = ConfigurationManager.ConnectionStrings["dbConnection"].ConnectionString;
-            
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand insertCommand = new SqlCommand("spInsertStudents", connection);
-            insertCommand.CommandType = CommandType.StoredProcedure;
-            SqlParameter tvpParam = insertCommand.Parameters.AddWithValue("@StudentList", StudentTable);
-            tvpParam.SqlDbType = SqlDbType.Structured;
-            tvpParam.TypeName = "dbo.TableTypeStudent";
-            try
+
+            int affectedRows = DataService.InsertStudentsIntoDbWithSP(StudentTable, Convert.ToInt32(ddlClass.SelectedValue));
+
+            if (affectedRows > 0)
             {
-                connection.Open();
-                int affectedRows = insertCommand.ExecuteNonQuery();
-                if (affectedRows > 0)
-                {
-                    successMsg.Text = affectedRows + " Records were inserted Successfully";
-                    successMsg.Visible = true;
-                }
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                if (connection != null)
-                {
-                    connection.Close();
-                }
+                successMsg.Text = affectedRows + " Records were inserted Successfully";
+                successMsg.Visible = true;
             }
         }
     }

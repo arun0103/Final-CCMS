@@ -89,7 +89,8 @@
             </table>
 
             <div id="navigation">
-                <asp:ContentPlaceHolder ID="menu" runat="server">
+                <asp:Panel ID ="menubar" runat="server" Visible="false">
+                    <asp:ContentPlaceHolder ID="menu" runat="server">
                     <div id='cssmenu'>
                         <ul>
 
@@ -242,27 +243,19 @@
 
                             </div>--%>
                 </asp:ContentPlaceHolder>
-                <asp:ContentPlaceHolder ID="menuuser" runat="server">
+                </asp:Panel>
+
+                <asp:Panel ID ="menubaruser" runat="server" Visible="false">
+                    <asp:ContentPlaceHolder ID="menuuser" runat="server">
                                 <div id="cssmenuUser">
                                     <ul>
 
                                         <%--Time Entry--%>
+                                        <li class='has-sub'><%--<a><span>Time Entry</span></a>--%>
+                                            <asp:LinkButton ID="lnkTimeEntryUser" runat="server" Visible="false"></asp:LinkButton></li>
+                                        <li class='has-sub'><%--<a><span>Faculty</span></a>--%>
+                                            <asp:LinkButton ID="lnkFacultyPage" runat="server" Visible="false"></asp:LinkButton></li>
 
-                                        <li class='last'>
-                                            <a>
-                                                <asp:LinkButton ID="lnkTimeEntryUser" runat="server" Visible="false"></asp:LinkButton>
-                                                <span>Time Entry</span></a>
-
-                                        </li>
-
-                                        <%--Faculty--%>
-
-
-                                        <li class='last'>
-                                            <asp:LinkButton ID="lnkFacultyPage" runat="server" Visible="false"></asp:LinkButton>
-
-
-                                        </li>
                                     </ul>
 
 
@@ -285,6 +278,7 @@
                                 </ul>
                             </div>--%>
                             </asp:ContentPlaceHolder>
+                </asp:Panel>
             </div>
             <div class="main-content">
                 

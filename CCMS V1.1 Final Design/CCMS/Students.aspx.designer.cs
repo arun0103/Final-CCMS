@@ -130,6 +130,33 @@ namespace CCMS {
         protected global::System.Web.UI.WebControls.GridView GridViewStudents;
         
         /// <summary>
+        /// lblClass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblClass;
+        
+        /// <summary>
+        /// ddlClass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlClass;
+        
+        /// <summary>
+        /// rfvClass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvClass;
+        
+        /// <summary>
         /// btnSaveStudents control.
         /// </summary>
         /// <remarks>

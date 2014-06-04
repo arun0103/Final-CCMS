@@ -288,5 +288,56 @@ namespace CCMS
 
             return result;
         }
+
+        public static int InsertIntoDatabaseSP(string procName, SqlParameter[] parameters)
+        {
+            int result = 0;
+
+            using (SqlCommand command = new SqlCommand(procName))
+            {
+                command.Connection = Connection;
+                command.CommandType = CommandType.StoredProcedure;
+
+                if (parameters != null)
+                {
+                    command.Parameters.AddRange(parameters);
+                }
+                Connection.Open();
+                result = command.ExecuteNonQuery();
+
+            }
+            return result;
+        }
+
+        public static int InsertStudentsIntoDbWithSP(DataTable dt, int classid)
+        {
+            int result = 0;
+
+            SqlCommand insertCommand = new SqlCommand("spInsertStudents", Connection);
+            insertCommand.CommandType = CommandType.StoredProcedure;
+            SqlParameter tvpParam = insertCommand.Parameters.AddWithValue("@StudentList", dt);
+            tvpParam.SqlDbType = SqlDbType.Structured;
+            tvpParam.TypeName = "dbo.TableTypeStudent";
+            insertCommand.Parameters.AddWithValue("@ClassId", classid);
+
+            try
+            {
+                Connection.Open();
+                result = insertCommand.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (Connection != null)
+                {
+                    Connection.Close();
+                }
+            }
+
+            return result;
+        }
     }
 }
