@@ -91,6 +91,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddFacultyDetail.aspx.cs">
+      <DependentUpon>AddFacultyDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="AddFacultyDetail.aspx.designer.cs">
       <DependentUpon>AddFacultyDetail.aspx</DependentUpon>
     </Compile>

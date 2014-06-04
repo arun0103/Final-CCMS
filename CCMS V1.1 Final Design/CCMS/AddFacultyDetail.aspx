@@ -71,7 +71,7 @@
                     </td>
                      <%--OnClientClick="return confirm('Are you sure, you want to ADD Faculty Data?')"--%>
                     <td>
-                        <asp:Button ID="clearBtn" runat="server" Text="Clear" Width="76px"
+                        <asp:Button ID="clearBtn" runat="server" Text="Reset" Width="76px"
                             CssClass="allbutton" OnClick="clearBtn_Click1" />
                     </td>
                 </tr>

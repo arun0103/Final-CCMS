@@ -42,6 +42,7 @@ namespace MyCCMS
             AU_firstname.Enabled = false;
             AU_lastname.Enabled = false;
             AU_role.Enabled = false;
+            AU_contact.Enabled = false;
             updateMsg.Visible = false;
         }
 
@@ -51,6 +52,7 @@ namespace MyCCMS
             AU_firstname.Enabled = true;
             AU_lastname.Enabled = true;
             AU_role.Enabled = true;
+            AU_contact.Enabled = true;
             Page.Validate();
 
             if (Page.IsValid)
