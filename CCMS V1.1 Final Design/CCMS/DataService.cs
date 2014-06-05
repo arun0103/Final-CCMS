@@ -110,7 +110,7 @@ namespace CCMS
                     adapter.Fill(result);
 
                 }
-                //////////////////////////////asdhjlfhasjfhsfhklshjfsklfhsklfhsklfhaskl fsjf asjdf ashdfj ashfk jashdfkjs ahf asfhsa fhask
+
 
             }
 
@@ -304,7 +304,6 @@ namespace CCMS
                 }
                 Connection.Open();
                 result = command.ExecuteNonQuery();
-                Connection.Close();
 
             }
             return result;
@@ -325,7 +324,6 @@ namespace CCMS
             {
                 Connection.Open();
                 result = insertCommand.ExecuteNonQuery();
-                
             }
             catch (SqlException ex)
             {

@@ -226,7 +226,8 @@
             OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
             OnRowDeleting="GridView1_RowDeleting">
             <Columns>
-                
+                <asp:BoundField DataField="FId"
+                    HeaderText="Faculty ID" ReadOnly="true" />
                 <asp:BoundField DataField="FirstName"
                     HeaderText="First Name" />
                 <asp:BoundField DataField="LastName" HeaderText="Last Name" />

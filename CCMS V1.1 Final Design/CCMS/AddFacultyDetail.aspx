@@ -52,7 +52,7 @@
                             Height="24px" BorderColor="#3366ff"></asp:TextBox>
                     </td>
                     <td class="tdValidator">
-                        <asp:RegularExpressionValidator runat="server" id="NumberValidation" ForeColor="Red" controltovalidate="contact" validationexpression="9(7|8)\d\d\d\d\d\d\d\d" errormessage="Please enter only numbers!" />
+                        <asp:RegularExpressionValidator runat="server" id="NumberValidation" ForeColor="Red" controltovalidate="contact" validationexpression="^[0-9]" errormessage="Please enter only numbers!" />
                     </td>
                 </tr>
                 <tr>
@@ -71,7 +71,7 @@
                     </td>
                      <%--OnClientClick="return confirm('Are you sure, you want to ADD Faculty Data?')"--%>
                     <td>
-                        <asp:Button ID="clearBtn" runat="server" Text="Reset" Width="76px"
+                        <asp:Button ID="clearBtn" runat="server" Text="Clear" Width="76px"
                             CssClass="allbutton" OnClick="clearBtn_Click1" />
                     </td>
                 </tr>

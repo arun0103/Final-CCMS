@@ -56,11 +56,11 @@
                 </asp:DropDownList>
                 <asp:RequiredFieldValidator ID="rfvClass" runat="server"
                     ControlToValidate="ddlClass" ErrorMessage="You must choose Class"
-                    ForeColor="Red" InitialValue="-1"></asp:RequiredFieldValidator>
+                    ForeColor="Red" InitialValue="-1" ValidationGroup="saveInDatabase"></asp:RequiredFieldValidator>
                 <br />
                 <br />
                 <asp:Button ID="btnSaveStudents" runat="server" OnClick="SaveStudents_Click"
-                    Text="Save in Database" Visible="False" />
+                    Text="Save in Database" Visible="False" ValidationGroup="saveInDatabase"/>
                 <br />
                 <asp:Label ID="successMsg" runat="server" Visible="False"></asp:Label>
 
